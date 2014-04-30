@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Invertir</title>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    
+	</head>
+	<body>
+	<h1>Invertir Palabra</h1>
+		<div id="espacio">
+		Escribir Texto: <input type="text" id="palabra_1" name="palabra_1" >
+		<input type="button" value="Invertir" onclick="validar(this.value)" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Texto invertido:<input type="text" id="palabra_2" name="palabra_2" >
+		</div>
+	</body>
+</html>
+<script>
+function validar(){
+	solo_letras('palabra_1')
+	invertir(document.getElementById("palabra_1").value)
+}
+
+
+
+
+
+
+
+	function invertir(palabra_1) {
+
+  	var a = palabra_1.length;
+  	var palabraInvertida = "";
+ 
+  while (a>=0) {
+    palabraInvertida = palabraInvertida + palabra_1.charAt(a);
+    a--;
+  } 
+  document.getElementById("palabra_2").value=palabraInvertida;
+}
+function solo_letras(identifica){
+	var cadena = document.getElementById(identifica).value;
+	if(/^[A-Z\a-z]+[A-Z\a-z]$/.test(cadena)){
+
+	}else{
+		alert("Solo letras")
+	}
+}
+
+</script>
